@@ -1,0 +1,809 @@
+<!--doctype html-->
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, intial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+      crossorigin="anonymous"
+    />
+    
+<title>Custmer Review</title>
+
+<link rel="stylesheet" href="css/navbar.css">
+<link rel="stylesheet" href="css/style.css">
+<style>
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: poppins;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+#testimonials{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width:100%;
+}
+.testimonial-heading{
+    letter-spacing: 1px;
+    margin: 30px 0px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.testimonial-heading h1{
+    font-size: 2.2rem;
+    font-weight: 500;
+    background-color: #202020;
+    color: #ffffff;
+    padding: 10px 20px;
+}
+.testimonial-heading span{
+    font-size: 1.3rem;
+    color: #252525;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.testimonial-box-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width:100%;
+}
+.testimonial-box{
+    width:500px;
+    box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 15px;
+    cursor: pointer;
+}
+.profile-img{
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+}
+.profile-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.profile{
+    display: flex;
+    align-items: center;
+}
+.name-user{
+    display: flex;
+    flex-direction: column;
+}
+.name-user strong{
+    color: #3d3d3d;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+.name-user span{
+    color: #979797;
+    font-size: 0.8rem;
+}
+.reviews{
+    color: #f9d71c;
+}
+.box-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.client-comment p{
+    font-size: 0.9rem;
+    color: #4b4b4b;
+}
+.testimonial-box:hover{
+    transform: translateY(-15px);
+    transition: all ease 0.5s;
+    
+}
+ 
+@media(max-width:1060px){
+    .testimonial-box{
+        width:45%;
+        padding: 10px;
+    }
+}
+@media(max-width:790px){
+    .testimonial-box{
+        width:100%;
+    }
+    .testimonial-heading h1{
+        font-size: 1.4rem;
+    }
+}
+@media(max-width:340px){
+    .box-top{
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+    }
+    .reviews{
+        margin-top: 10px;
+    }
+}
+::selection{
+    color: #ffffff;
+    background-color: #252525;
+}
+a {
+  color: cadetblue;
+  text-decoration: none;
+}
+
+#feedback {
+  max-width: 60%;
+  width: 100%;
+  margin: 10px auto;
+  padding: 20px;
+  border: solid 1px #f1f1f1;
+  background: #fbfbfb;
+  box-shadow: #e6e6e6 0 0 4px ;
+  border-radius: 0.25rem;
+}
+
+@media (max-width: 720px) {
+  #feedback{
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 500px) {
+  #feedback{
+    padding: 10px;
+  }
+}
+
+#fh2{
+ padding: 2px 15px;
+ color: #0a0a0a;
+ text-align: center;
+ font-size: 40px;
+ 
+ 
+}
+
+@media (max-width: 400px) {
+  #fh2{
+    font-size: 20px;
+  }
+}
+
+
+#fh6 {
+ padding: 2px 15px;
+ color: black;
+ text-align : center;
+ font-weight : normal;
+ font-size: 16px;
+}
+
+@media (max-width: 400px) {
+  #fh6{
+    font-size: 12px;
+  }
+}
+
+.pinfo {
+ margin: 8px auto;
+ font-weight: bold;
+ line-height: 1.5;
+ color: #0d0d0d;
+}
+.form-group {
+  margin-bottom: 1rem;
+}
+  
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.25;
+  font-weight: bold;
+  color: #6C6262;
+  background-color: #fff;
+  background-image: none;
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+}
+
+.form-control::-ms-expand {
+  background-color: transparent;
+  border: 0;
+}
+
+.form-control:focus {
+  color: #696060;
+  background-color: #fff;
+  border-color: #5cb3fd;
+  outline: none;
+}
+
+.form-control::-webkit-input-placeholder {
+  color: #F34949;
+  opacity: 1;
+}
+
+.form-control::-moz-placeholder {
+  color: brown;
+  opacity: 1;
+}
+
+.form-control:-ms-input-placeholder {
+  color: blue;
+  opacity: 1;
+}
+
+.form-control::placeholder {
+  color: white;
+  opacity: 1;
+}
+
+.form-control:disabled, .form-control[readonly] {
+  background-color: rgb(3, 3, 3);
+  opacity: 1;
+}
+
+.form-control:disabled {
+  cursor: not-allowed;
+}
+
+select.form-control:not([size]):not([multiple]) {
+  height: calc(2.25rem + 2px);
+}
+
+select.form-control:focus::-ms-value {
+  color: green;
+  background-color: #fff;
+}
+
+.form-control-file,
+.form-control-range {
+  display: block;
+}
+
+.input-group {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.input-group .form-control {
+  position: relative;
+  z-index: 2;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  width: 1%;
+  margin-bottom: 0;
+}
+
+.input-group .form-control:focus, .input-group .form-control:active, .input-group .form-control:hover {
+  z-index: 3;
+}
+
+.input-group-addon,
+.input-group-btn,
+.input-group .form-control {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.input-group-addon:not(:first-child):not(:last-child),
+.input-group-btn:not(:first-child):not(:last-child),
+.input-group .form-control:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+
+.input-group-addon,
+.input-group-btn {
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.input-group-addon {
+  width: 45px;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.25;
+  color: #2e2e2e;
+  text-align: center;
+  background-color: #eceeef;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+}
+
+.input-group-addon.form-control-sm,
+.input-group-sm > .input-group-addon,
+.input-group-sm > .input-group-btn > .input-group-addon.btn {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.2rem;
+}
+
+.input-group-addon.form-control-lg,
+.input-group-lg > .input-group-addon,
+.input-group-lg > .input-group-btn > .input-group-addon.btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.25rem;
+  border-radius: 0.3rem;
+}
+
+.input-group-addon input[type="radio"],
+.input-group-addon input[type="checkbox"] {
+  margin-top: 0;
+}
+
+.input-group .form-control:not(:last-child),
+.input-group-addon:not(:last-child),
+.input-group-btn:not(:last-child) > .btn,
+.input-group-btn:not(:last-child) > .btn-group > .btn,
+.input-group-btn:not(:last-child) > .dropdown-toggle,
+.input-group-btn:not(:first-child) > .btn:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:not(:first-child) > .btn-group:not(:last-child) > .btn {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.input-group-addon:not(:last-child) {
+  border-right: 0;
+}
+
+.input-group .form-control:not(:first-child),
+.input-group-addon:not(:first-child),
+.input-group-btn:not(:first-child) > .btn,
+.input-group-btn:not(:first-child) > .btn-group > .btn,
+.input-group-btn:not(:first-child) > .dropdown-toggle,
+.input-group-btn:not(:last-child) > .btn:not(:first-child),
+.input-group-btn:not(:last-child) > .btn-group:not(:first-child) > .btn {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.form-control + .input-group-addon:not(:first-child) {
+  border-left: 0;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: normal;
+  line-height: 1.25;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border: 1px solid transparent;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:focus, .btn:hover {
+  text-decoration: none;
+}
+
+.btn:focus, .btn.focus {
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 2px rgba(2, 117, 216, 0.25);
+          box-shadow: 0 0 0 2px rgba(2, 117, 216, 0.25);
+}
+
+.btn.disabled, .btn:disabled {
+  cursor: not-allowed;
+  opacity: .65;
+}
+
+.btn:active, .btn.active {
+  background-image: none;
+}
+
+a.btn.disabled,
+fieldset[disabled] a.btn {
+  pointer-events: none;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #0c0c0c;
+  border-color: #0d0d0e;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #025aa5;
+  border-color: #01549b;
+}
+
+.btn-primary:focus, .btn-primary.focus {
+  -webkit-box-shadow: 0 0 0 2px rgba(2, 117, 216, 0.5);
+          box-shadow: 0 0 0 2px rgba(2, 117, 216, 0.5);
+}
+
+.btn-primary.disabled, .btn-primary:disabled {
+  background-color: #0275d8;
+  border-color: #0275d8;
+}
+
+.btn-primary:active, .btn-primary.active,
+.show > .btn-primary.dropdown-toggle {
+  color: #fff;
+  background-color: #025aa5;
+  background-image: none;
+  border-color: #01549b;
+}
+
+
+#footer-social {
+  margin: 0;
+  padding: 0;
+}
+
+.foot-icons {
+  margin: 0 30% 0 30%;
+  font-size: 50px;
+}
+
+.foot-icons>li {
+  margin: 10px auto;
+  padding-bottom: 40px;
+  padding-top: 20px;
+  width: 90px;
+}
+
+.foot-icons>li>a>i {
+  color: white;
+  transition: .2s ease;
+  transition-timing-function: initial;
+  width: 80px;
+}
+
+.foot-icons>li>a>i:hover {
+  color: #38A1F3;
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+  font-size: 50px;
+  transition: .2s ease-out;
+}
+
+figcaption {
+  text-align: center;
+  color: #000;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.item>a>img {
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+  border-radius: 7px;
+}
+
+.item:hover {
+  filter: brightness(50%);
+  transition: .5s ease;
+}
+
+
+</style>
+</head>
+<body>
+    <nav>
+        <ul>
+          <li class="primary-nav">
+            <img src="Img/logo.png" alt="logo" />
+            <a href="#"> </a>
+          </li>
+          
+          <li class="secondary-nav">
+            <a href="signup.php"><i class="fa fa-user-circle" aria-hidden="true" style="font-size:28px" ></i></a>
+          </li> 
+          <li class="secondary-nav">
+            <a href="contact.html">CONTACT US</a>
+          </li>
+          <li class="secondary-nav">
+            <a href="about.html">ABOUT US</a>
+          </li>
+
+          <li class="secondary-nav"><a href="review.html">REVIEW</a></li>
+          <li class="secondary-nav"><a href="Product.html">BOOKS</a></li>
+          <li class="secondary-nav"><a href="index.html">HOME</a></li>
+        </ul>
+      </nav>
+    
+    <br><br><br><br>
+    <!--Testimonials------------------->
+    <section id="testimonials">
+        <!--heading--->
+        <div class="testimonial-heading">
+            <span>Customer's review</span>
+            <h1>Clients Says</h1>
+        </div>
+        <!--testimonials-box-container------>
+        <div class="testimonial-box-container">
+            <!--BOX-1-------------->
+            <div class="testimonial-box">
+                <!--top------------------------->
+                <div class="box-top">
+                    <!--profile----->
+                    <div class="profile">
+                        <!--img---->
+                        <div class="profile-img">
+                            <img src="Img/1cust.jpg" />
+                        </div>
+                        <!--name-and-username-->
+                        <div class="name-user">
+                            <strong>Touseeq Ijaz</strong>
+                            <span>@touseeqijazweb</span>
+                            <img src="Img/5star.jpg" height="30" width="85">
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <!--Comments---------------------------------------->
+                <div class="client-comment">
+                    <p><i><b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.</b></i></p>
+                </div>
+            </div>
+            <!--BOX-2-------------->
+            <div class="testimonial-box">
+                <!--top------------------------->
+                <div class="box-top">
+                    <!--profile----->
+                    <div class="profile">
+                        <!--img---->
+                        <div class="profile-img">
+                            <img src="Img/2cust.jpg" />
+                        </div>
+                        <!--name-and-username-->
+                        <div class="name-user">
+                            <strong>J.K Rowling</strong>
+                            <span>@jkrowling</span>
+                            <img src="Img/5star.jpg" height="30" width="85">
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <!--Comments---------------------------------------->
+                <div class="client-comment">
+                    <p><strong><em> ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.</em></strong></p>
+                </div>
+            </div>
+            <!--BOX-3-------------->
+            <div class="testimonial-box">
+                <!--top------------------------->
+                <div class="box-top">
+                    <!--profile----->
+                    <div class="profile">
+                        <!--img---->
+                        <div class="profile-img">
+                            <img src="Img/3cust.jpg" />
+                        </div>
+                        <!--name-and-username-->
+                        <div class="name-user">
+                            <strong>Harry Potter</strong>
+                            <span>@DanielRedclief</span>
+                            <img src="Img/5star.jpg" height="30" width="85">
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+                <!--Comments---------------------------------------->
+                <div class="client-comment">
+                    <p><b><i>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.</i></b></p>
+                </div>
+            </div>
+            <!--BOX-4-------------->
+            <div class="testimonial-box">
+                <!--top------------------------->
+                <div class="box-top">
+                    <!--profile----->
+                    <div class="profile">
+                        <!--img---->
+                        <div class="profile-img">
+                            <img src="Img/4cust.jpg" />
+                        </div>
+                        <!--name-and-username-->
+                        <div class="name-user">
+                            <strong>Oliva</strong>
+                            <span>@Olivaadward</span>
+                            <img src="Img/5star.jpg" height="30" width="85">
+                        </div>
+                    </div>
+                    
+                </div>
+                <!--Comments---------------------------------------->
+                <div class="client-comment">
+                    <p><b><i>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.</i></b></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <p id="fh2">WE APPRECIATE YOUR REVIEW!</p>
+<h6 id="fh6">Your review will help us to improve our web hosting quality products, and customer services.</h6>
+
+
+<form id="feedback" action="reviews.php" method="post">
+  <div class="pinfo">Your personal info</div>
+  
+<div class="form-group">
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="fa fa-user"></i></span>
+  <input  name="name" placeholder="John Doe" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+    <input name="email" type="email" class="form-control" placeholder="john.doe@yahoo.com">
+     </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="fa fa-globe"></i></span>
+  <input  name="URL" placeholder="https://google.com" class="form-control"  type="url">
+    </div>
+  </div>
+</div>
+
+ <div class="pinfo">Rate our overall services.</div>
+  
+
+<div class="form-group">
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="fa fa-heart"></i></span>
+   <select class="form-control" id="rate" name="rating">
+      <option value="1star">1</option>
+      <option value="2stars">2</option>
+      <option value="3stars">3</option>
+      <option value="4stars">4</option>
+      <option value="5stars">5</option>
+    </select>
+    </div>
+  </div>
+</div>
+
+ <div class="pinfo">Write your feedback.</div>
+  
+
+<div class="form-group">
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+  <textarea class="form-control" id="review" rows="3" name="feedback"></textarea>
+ 
+    </div>
+  </div>
+</div>
+
+ <button type="submit" name="save" class="btn btn-primary">Submit</button>
+
+
+</form>
+<br> <br> <br> <br>
+<section class="footer">
+
+    <div class="box-container">
+  
+        <div class="box">
+          <br>
+          <br>
+          <img src="Img/logo.png" height="60" width="120" alt="logo" /><br> 
+          <h2><b>about company</b></h2>
+          <p style="font-family:Verdana, Geneva, Tahoma, sans-serif">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint blanditiis at, delectus vel dolores inventore voluptate debitis dolore illo officiis eum! Veritatis facere voluptatem, impedit maiores nemo cumque voluptatum ad.!</p>
+        </div>
+        <br>
+        <div class="box">
+            <h2>quick links</h2>
+            <a href="#"> <i class="fas fa-arrow-right"></i> home </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> Books </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> featured </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> review </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> contact </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> blogs </a>
+        </div>
+  
+    </div>
+  </section>
+  
+  <!-- footer section ends -->
+      <footer id="footer-social">
+        
+        <ul class="row foot-icons" style="list-style-type: none;">
+          <li>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+               ><i class="fab fa-facebook-f"></i
+              ></a>
+          </li>
+          <li>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+               ><i class="fab fa-twitter"></i
+              ></a>
+          </li>
+          <li>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+            ><i class="fab fa-google"></i
+           ></a>
+          </li>
+          <li>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+               ><i class="fab fa-instagram"></i
+              ></a>
+          </li>
+          <li>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+               ><i class="fab fa-linkedin-in"></i
+              ></a>
+          </li>
+          <li>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+            ><i class="fab fa-github"></i
+           ></a>
+          </li>
+        </ul>
+        
+      </footer>
+</body>
+</html>

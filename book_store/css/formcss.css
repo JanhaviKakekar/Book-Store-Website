@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Rubik', sans-serif;
+    border: none;
+    transition: all .2s linear;
+    font-family: sans-serif;
+}
+body {
+    height: 600px;
+    background-color: whitesmoke; 
+    background-image: linear-gradient(whitesmoke, grey);
+  }
+
+  .message{
+    
+    top: 12%;
+    left: 50%;
+    height: 20px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+
+    background-color: transparent;
+    padding:1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10000;
+    gap:1.5rem;
+   
+ }
+ 
+ .message span{
+    font-size: 1.1rem;
+    color:black;
+ }
+ 
+ .message i{
+    cursor: pointer;
+    color:black;
+    font-size: 1.1rem;
+ }
+ 
+ .message i:hover{
+    transform: rotate(90deg);
+ }
+ 
+.form-container{
+    width: 370px;
+    height: 500px;
+    /* background: whitesmoke; */
+    background: black;
+  
+   
+    /* background: transparent; */
+    opacity: 75%;
+    
+    top: 56%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    border-radius: 20px;
+    border: 0.5px solid black;
+}
+.form-container h2{
+    color: white;
+    text-align: center;
+    margin-top: 18px;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+.form-container p{
+    color: white;
+    text-align: center;
+    padding: 0px;
+    margin-top: 21px;
+    font-weight: bold;
+}
+
+.form-container form input[type="text"],input[type="email"],input[type="password"]  {
+    border: none;
+    display: block;
+    margin: auto;
+  color: white;
+    height: 10px;
+    padding: 10PX;
+    border-bottom: 1px solid white;
+    text-align: center;
+    font-size: 14px;
+    outline: none;
+    background: transparent;
+}
+.form-container select{
+    display: block;
+    margin: auto;
+    color: white;
+    background: transparent;
+    border-bottom: 1px solid white;
+    padding: 3px 8px;
+    width: 25%;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.form-container input[type="submit"]{
+    
+    margin-top: 10px;
+    background: #3da2c3;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    display: block;
+    margin: auto;
+
+
+}
+.form-container input[type="submit"]:hover{
+    cursor: pointer;
+    background-color: #a9d6e6;
+}
+.form-container a{
+    color: rgb(48, 48, 187);
+}

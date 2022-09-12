@@ -1,0 +1,134 @@
+footer {
+    background-color: #1b212b;
+    color: white;
+    height: 110px;
+  }
+  .footer {
+    background: rgb(40, 39, 39);
+    height: 500px;
+  }
+  
+  .footer .box-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .footer .box-container .box h2 {
+    font-size: 1.8rem;
+    color: white;
+    padding: 1rem 0;
+  }
+  
+  .footer .box-container .box p {
+    font-size: 1.0rem;
+    color: whitesmoke;
+    padding: 1rem 0;
+    line-height: 1;
+  }
+  
+  .footer .box-container .box a {
+    display: block;
+    font-size: 1.0rem;
+    color: whitesmoke;
+    padding: 1rem 0;
+  }
+  
+  .footer .box-container .box a i {
+    padding-right: .5rem;
+    color:white;
+  }
+  
+  .footer .box-container .box a:hover {
+    color: #eee9e9;
+  }
+  
+  .footer .box-container .box a:hover i {
+    padding-right: 2rem;
+  }
+  
+  .footer .share {
+    padding-top: 2rem;
+    text-align: center;
+  }
+  
+  .footer .share a {
+    font-size: 1rem;
+    height: 5rem;
+    width: 5rem;
+    line-height: 4rem;
+    border-radius: 50%;
+    background: #130f40;
+    color: #fff;
+    margin: .3rem;
+  }
+  
+  .footer .share a:hover {
+    background: #f0efef;
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  
+  .footer .credit {
+    margin-top: 2.5rem;
+    padding: 1rem;
+    padding-top: 2rem;
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: #666;
+    font-size: 1rem;
+  }
+  
+  .footer .credit span {
+    color: #efe7e7;
+  }
+  #footer-social {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .foot-icons {
+    margin: 0 30% 0 30%;
+    font-size: 50px;
+  }
+  
+  .foot-icons>li {
+    margin: 10px auto;
+    padding-bottom: 40px;
+    padding-top: 20px;
+    width: 90px;
+  }
+  
+  .foot-icons>li>a>i {
+    color: white;
+    transition: .2s ease;
+    transition-timing-function: initial;
+    width: 80px;
+  }
+  
+  .foot-icons>li>a>i:hover {
+    color: #38A1F3;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+    font-size: 50px;
+    transition: .2s ease-out;
+  }
+  
+  figcaption {
+    text-align: center;
+    color: #000;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  .item>a>img {
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+    border-radius: 7px;
+  }
+  
+  .item:hover {
+    filter: brightness(50%);
+    transition: .5s ease;
+  }
+  
